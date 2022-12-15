@@ -1,3 +1,14 @@
+<?php 
+$length = $_GET['length'];
+
+function password_generate($chars) 
+{
+  $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz!@#$%^&*<>~`+=,.;:/?';
+  return substr(str_shuffle($data), 0, $chars);
+}
+
+?>
+
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -18,6 +29,13 @@
           <button type="submit" class="btn btn-primary mb-3">Genera</button>
         </div>
       </form>
+      <h2>Password generata</h2>
+      <div>
+        <?php 
+          echo password_generate($length);
+        ?>
+
+      </div>
     </div>
   </body>
 </html>

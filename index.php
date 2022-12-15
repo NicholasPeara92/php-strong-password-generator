@@ -1,8 +1,13 @@
 <?php 
-$length = $_GET['length'];
+session_start();
 
-include __DIR__ . "/functions.php"
+include __DIR__ . "/functions.php";
 
+if( !empty($_GET['length'])) {
+  $length = $_GET['length'];
+  $_SESSION['password'] = password_generate($length);
+  header("Location: http://localhost/php-strong-password-generator/password.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +30,6 @@ include __DIR__ . "/functions.php"
           <button type="submit" class="btn btn-primary my-3">Genera</button>
         </div>
       </form>
-      <h2>Password generata</h2>
-      <div>
-        <?php 
-          echo password_generate($length);
-        ?>
-
-      </div>
     </div>
   </body>
 </html>

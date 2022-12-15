@@ -3,11 +3,6 @@ session_start();
 
 include __DIR__ . "/functions.php";
 
-if( !empty($_GET['length'])) {
-  $length = $_GET['length'];
-  $_SESSION['password'] = password_generate($length);
-  header("Location: http://localhost/php-strong-password-generator/password.php");
-}
 ?>
 
 <!DOCTYPE html>

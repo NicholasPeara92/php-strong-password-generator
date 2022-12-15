@@ -11,10 +11,10 @@
   <body>
     <div class="container">
       <h1>PASSWORD GENERATOR</h1>
-      <form class="row">
+      <form class="row" method="GET">
         <div class="col-auto">
           <label for="inputPassword">Lunghezza Password</label>
-          <input type="number" class="form-control" id="inputPassword" min="6" max="20">
+          <input type="number" name="length" class="form-control" id="inputPassword" min="6" max="20" required>
           <button type="submit" class="btn btn-primary mb-3">Genera</button>
         </div>
       </form>
